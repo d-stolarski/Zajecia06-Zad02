@@ -1,21 +1,15 @@
 import java.util.Random;
-
 public class MultiArray {
 
     private int[][] tab;
 
-    Random rand = new Random();
-
     public MultiArray(int n, int m) {
-        tab = new int[n][];
-        for (int i = 0; i < n; i++) {
-            tab[i] = new int[m];
-            for (int j = 0; j < m; j++) {
-                tab[i][j] = rand.nextInt(100);
-            }
-        }
+        tab = new int[n][m];
+        randomize();
     }
+
     public void randomize() {
+        Random rand = new Random();
         for (int i = 0; i < tab.length; i++) {
             for (int j = 0; j < tab[i].length; j++) {
                 tab[i][j] = rand.nextInt(100);
